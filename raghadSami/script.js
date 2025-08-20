@@ -12,6 +12,9 @@ function Students(name,age,grade){
            
         }
     }
-    
+      this.getGrade = function() {
+        setGrade(stdGrade);
+        return stdGrade;
+    }
     
 }
