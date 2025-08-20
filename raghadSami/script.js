@@ -21,4 +21,5 @@ function Students(name,age,grade){
 Students.prototype.introduce= function (){ 
     console.log(` Hi, my name is ${this.name}, I’m ${this.age} years old, and I’m in grade ${this.getGrade()}. `)
  }
- 
+  const student= new Students("raghad",21,"d"); 
+  student.introduce();
