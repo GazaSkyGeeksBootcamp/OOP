@@ -1,6 +1,7 @@
 function validateGrade(grade) {
-  if (grade.toUpperCase() === "A" || grade.toUpperCase() === "F") {
-    return grade.toUpperCase();
+  const upperCaseGrade = grade.trim().toUpperCase();
+  if (upperCaseGrade === "A" || upperCaseGrade === "F") {
+    return upperCaseGrade;
   }
   throw new Error("Grade should be only (A) or (F)");
 }
