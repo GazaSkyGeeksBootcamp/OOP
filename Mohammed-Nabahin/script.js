@@ -29,6 +29,7 @@ const firstStudent = new Student("Ali", 21, "A");
 firstStudent.introduce();
 console.log(firstStudent.getGrade()); // A
 console.log(firstStudent.grade); // undefined
+firstStudent.setGrade("f");
 console.log(firstStudent.getGrade()); // F
 
 // firstStudent.setGrade("C"); // Error
