@@ -16,13 +16,13 @@ function Student(name, age, initialGrade) {
 
   this.setGrade(initialGrade);
 
-  this.introduce = function () {
-    console.log(
-      `Hi, my name is ${this.name}, I’m ${this.age} years old, and I’m in grade ${_grade}.`
-    );
-  };
-}
 
+}
+Student.prototype.introduce = function () {
+  console.log(
+    `Hi, my name is ${this.name}, I’m ${this.age} years old, and I’m in grade ${this.getGrade()}.`
+  );
+};
 const s1 = new Student("anas", 21, "F");
 console.log(s1);
 
