@@ -3,12 +3,8 @@ function Student(name, age, grade) {
   this.age = age;
   let _grade = null;
 
-  const validGrade = (value) => value === "A" || value === "F";
-
-  this.introduce = function () {
-    console.log(
-      `Hi, my name is ${this.name}, I’m ${this.age} years old, and I’m in grade ${_grade}.`
-    );
+  this.validateGrade = function (value) {
+    return value === "A" || value === "F";
   };
 
   this.getGrade = function () {
@@ -16,22 +12,29 @@ function Student(name, age, grade) {
   };
 
   this.setGrade = function (value) {
-    if (validGrade(value)) {
+    if (this.validateGrade(value)) {
       _grade = value;
-      return true;
     } else {
       console.error("Grade must be 'A' or 'F' only.");
-      return false;
     }
   };
-  if (!this.setGrade(grade)) {
-    _grade = null;
-  }
+
+  this.setGrade(grade);
 }
+
+Student.prototype.introduce = function () {
+  console.log(
+    `Hi, my name is ${this.name}, I’m ${
+      this.age
+    } years old, and I’m in grade ${this.getGrade()}.`
+  );
+};
 
 // Test
 const student = new Student("Lama", 23, "A");
 student.introduce(); // Hi, my name is Lama, I’m 23 years old, and I’m in grade A.
+
 student.setGrade("F");
 student.introduce(); // Hi, my name is Lama, I’m 23 years old, and I’m in grade F.
-student.setGrade("B"); // Error + false
+
+student.setGrade("B"); // Error: Grade must be 'A' or 'F' only.
