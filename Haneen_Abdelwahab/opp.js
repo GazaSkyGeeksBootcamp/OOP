@@ -23,7 +23,7 @@ function StudentDetails(name,age,grade){
     
     this.setGrade=function (value) {
     if (validateGrade(value)) {
-      _grade = value;
+      _grade = value
     } else {
       console.log("Invalid grade! Only A or F is allowed.")
       _grade=undefined
